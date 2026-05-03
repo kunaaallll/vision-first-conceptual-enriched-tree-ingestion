@@ -1,4 +1,4 @@
-# VisionRAG — Vision-First Multimodal RAG Pipeline
+# VisionRAG — Vision-First Multimodal RAG Pipeline Using PageIndex Structured tree
 
 A production-ready RAG (Retrieval-Augmented Generation) pipeline for textbook PDFs. Uses GPT-4o Vision to extract formulas, tables, diagrams, and prose from every page, then builds a hybrid search index (semantic + BM25 + section-scoped) backed by PostgreSQL + pgvector.
 
@@ -69,7 +69,7 @@ curl http://localhost:8000/documents/{document_id}/status
 
 ### Upload section tree
 
-After ingestion reaches `vision_done`, upload your section hierarchy:
+After ingestion reaches `vision_done`, upload your section hierarchy using PageIndex tree(You can get it from official pageIndex chat):
 
 ```bash
 curl -X POST http://localhost:8000/documents/{document_id}/tree \
